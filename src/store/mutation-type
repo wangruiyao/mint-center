@@ -1,0 +1,5 @@
+/*
+ *  定义mutation别名
+ */
+
+export const ACCESS_TOKEN = 'Access-Token'

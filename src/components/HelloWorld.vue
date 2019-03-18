@@ -36,6 +36,9 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  mounted () {
+    this.$messagebox('123')
   }
 }
 </script>
