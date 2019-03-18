@@ -49,5 +49,7 @@ module.exports = {
       .set('utils', resolve('src/utils'))
       .set('views', resolve('src/views'))
       .set('core', resolve('src/core'))
+      .set('store', resolve('src/store'))
+      .set('router', resolve('src/router'))
   }
 }
