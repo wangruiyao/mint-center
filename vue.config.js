@@ -11,7 +11,7 @@ module.exports = {
     }
   },
   outputDir: '../public/dist',
-  baseUrl: process.env.NODE_ENV === 'production'
+  publicPath: process.env.NODE_ENV === 'production'
     ? '/dist'
     : '/',
   css: {

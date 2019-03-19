@@ -1,8 +1,5 @@
 <template>
-  <div>
-    blankLayout
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <style></style>

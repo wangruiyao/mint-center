@@ -1,6 +1,6 @@
 <template>
   <div>
-    登录页
+    <a>222</a>登录页
     <mt-button type="primary" @click="register">注册</mt-button>
   </div>
 </template>
