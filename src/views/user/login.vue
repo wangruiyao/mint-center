@@ -8,12 +8,12 @@
 <style></style>
 
 <script>
-  export default {
-    name: 'login',
-    methods: {
-      register() {
-        this.$router.push('/user/register')
-      }
+export default {
+  name: 'login',
+  methods: {
+    register() {
+      this.$router.push('/user/register')
     }
   }
+}
 </script>

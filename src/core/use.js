@@ -5,5 +5,4 @@ import fastClick from 'fastclick'
 
 Vue.use(VueStorage, config.storageOptions)
 
-// fastClick.attach(document.body)
-fastClick.a
+fastClick.attach(document.body)
