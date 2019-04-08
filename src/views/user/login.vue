@@ -17,23 +17,23 @@
     height: 1rem;
   }
   .box1 {
-    width: 2rem;
+    width: 20px;
     background-color: coral;
   }
   .box2 {
-    width: 4rem;
+    width: 40px;
     background-color: skyblue;
   }
   .box3 {
-    width: 6rem;
+    width: 60px;
     background-color: palegreen;
   }
   .box4 {
-    width: 8rem;
+    width: 80px;
     background-color: wheat;
   }
   .box5 {
-    width: 10rem;
+    width: 375px;
     background-color: darkred;
   }
 </style>
