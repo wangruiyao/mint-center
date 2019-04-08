@@ -9,10 +9,17 @@ module.exports = {
       template: './public/index.html',
       filename: 'index.html'
     }
+    // test: {
+    //   entry: './src/views/test1/main.js',
+    //   template: './public/index.html',
+    //   filename: 'index.html',
+    //   title: 'Index Page',
+    //   chunks: ['chunk-vendors', 'chunk-common', 'test']
+    // }
   },
-  outputDir: '../public/dist',
+  outputDir: './public/dist',
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/dist'
+    ? './'
     : '/',
   css: {
     loaderOptions: {
@@ -24,6 +31,7 @@ module.exports = {
       }
     }
   },
+  productionSourceMap: false, // 打包时忽略 .js.map文件
   pluginOptions: {
     'cube-ui': {
       postCompile: true,

@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from 'router'
-import store from 'store'
+import router from 'src/router'
+import store from 'src/store'
 
-import 'plugins'
+import 'src/plugins'
 import 'core/use'
 
 // import style files

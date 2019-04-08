@@ -11,6 +11,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "fastclick": "^1.0.6",
+    "lib-flexible": "^0.3.2",
+    "lodash": "^4.17.11",
     "mint-ui": "^2.2.13",
     "vue": "^2.6.6",
     "vue-ls": "^3.2.1",
@@ -29,6 +31,7 @@
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
+    "px2rem-loader": "^0.1.9",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21"
   },

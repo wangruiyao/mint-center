@@ -2,12 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Route from './router'
 
-import { ACCESS_TOKEN } from 'store/mutation-type'
+import { ACCESS_TOKEN } from '../store/mutation-type'
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-  mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: Route
 })

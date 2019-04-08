@@ -44,34 +44,3 @@ export default [
     ]
   }
 ]
-// {
-//   path: '/',
-//     component: App, // 顶层路由，对应index.html
-//   children: [ // 二级路由。对应App.vue
-//
-//   {
-//     path: '',
-//     redirect: '/center'
-//   },
-//   { // 首页
-//     path: '/center',
-//     name: 'center',
-//     component: center,
-//     meta: { requiresAuth: true }
-//   },
-//   {
-//     path: '/user',
-//     component: user,
-//     children: [
-//       { // 登录
-//         path: 'login',
-//         component: login
-//       },
-//       { // 注册
-//         path: 'register',
-//         component: register
-//       }
-//     ]
-//   }
-// ]
-// }
