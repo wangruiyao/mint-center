@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h3>空白布局</h3>
-    <hr/>
-    <router-view />
+    <p>注册页</p>
   </div>
 </template>
 
@@ -10,6 +8,8 @@
 
 <script>
 export default {
-  name: 'BlankLayout'
+  name: 'register',
+  methods: {
+  }
 }
 </script>

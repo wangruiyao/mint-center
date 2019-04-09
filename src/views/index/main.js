@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from 'src/router'
-import store from 'src/store'
+import router from 'src/views/index/router'
+import store from 'src/views/index/store'
 
 import 'src/plugins'
 import 'core/use'

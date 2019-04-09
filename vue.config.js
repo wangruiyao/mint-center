@@ -5,17 +5,24 @@ function resolve (dir) {
 module.exports = {
   pages: {
     index: {
-      entry: './src/main.js',
+      entry: './src/views/index/main.js',
       template: './public/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      title: 'Index Page',
+      chunks: ['chunk-vendors', 'chunk-common', 'index']
+    },
+    broadband: { // 宽带地址查询
+      entry: './src/views/broadband/main.js',
+      template: './public/broadband.html',
+      filename: 'broadband.html',
+      title: 'Broadband Page',
+      chunks: ['chunk-vendors', 'chunk-common', 'broadband']
     }
-    // test: {
-    //   entry: './src/views/test1/main.js',
-    //   template: './public/index.html',
-    //   filename: 'index.html',
-    //   title: 'Index Page',
-    //   chunks: ['chunk-vendors', 'chunk-common', 'test']
-    // }
+    // 当使用只有入口的字符串格式时，
+    // 模板会被推导为 `public/subpage.html`
+    // 并且如果找不到的话，就回退到 `public/index.html`。
+    // 输出文件名会被推导为 `subpage.html`。
+    // subpage: "src/subpage/main.js"
   },
   outputDir: './public/dist',
   publicPath: process.env.NODE_ENV === 'production'
@@ -23,7 +30,7 @@ module.exports = {
     : '/',
   css: {
     loaderOptions: {
-      postcss: {
+      postcss: { // 配置px2rem
         plugins: [
           require('postcss-px2rem')({
             remUnit: 37.5
@@ -46,12 +53,24 @@ module.exports = {
     }
   },
   devServer: {
-    historyApiFallback: true, // history模式开启
+    // historyApiFallback: true, // history模式开启
     proxy: {
       '/api': {
         target: 'http://yapi.imeete.com/mock/320',
         changeOrigin: true
       }
+    },
+    historyApiFallback: {
+      rewrites: [
+        {
+          from: /\/broadband/,
+          to: '/broadband.html'
+        },
+        {
+          from: /\//,
+          to: '/index.html'
+        }
+      ]
     }
   },
   chainWebpack: (config) => {
@@ -66,5 +85,6 @@ module.exports = {
       .set('core', resolve('src/core'))
       .set('store', resolve('src/store'))
       .set('router', resolve('src/router'))
+    config.output.filename('[name].[hash].js').end()
   }
 }
