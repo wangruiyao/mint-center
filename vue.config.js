@@ -1,30 +1,17 @@
-var path = require('path')
+let path = require('path')
 function resolve (dir) {
   return path.join(__dirname, dir)
 }
+
+// 默认打包模块名
+const DEFAULT_BUILD_MODULE = require('./src/config/mutation-type').mutaions.DEFAULT_BUILD_MODULE
+console.log(DEFAULT_BUILD_MODULE)
+// 入口配置
+let pagesConfig = require('./src/config/pagesSetting').setPages(resolve('src/views'))
+
 module.exports = {
-  pages: {
-    index: {
-      entry: './src/views/index/main.js',
-      template: './public/index.html',
-      filename: 'index.html',
-      title: 'Index Page',
-      chunks: ['chunk-vendors', 'chunk-common', 'index']
-    },
-    broadband: { // 宽带地址查询
-      entry: './src/views/broadband/main.js',
-      template: './public/broadband.html',
-      filename: 'broadband.html',
-      title: 'Broadband Page',
-      chunks: ['chunk-vendors', 'chunk-common', 'broadband']
-    }
-    // 当使用只有入口的字符串格式时，
-    // 模板会被推导为 `public/subpage.html`
-    // 并且如果找不到的话，就回退到 `public/index.html`。
-    // 输出文件名会被推导为 `subpage.html`。
-    // subpage: "src/subpage/main.js"
-  },
-  outputDir: './public/dist',
+  pages: pagesConfig,
+  outputDir: 'dist/' + (process.argv[3] === undefined ? DEFAULT_BUILD_MODULE : process.argv[3]),
   publicPath: process.env.NODE_ENV === 'production'
     ? './'
     : '/',

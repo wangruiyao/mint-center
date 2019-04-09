@@ -9,10 +9,11 @@
 </style>
 
 <script>
+
 export default {
   name: 'login',
   methods: {
-    register() {
+    register () {
       this.$router.push('/user/register')
     }
   }
